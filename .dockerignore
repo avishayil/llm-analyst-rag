@@ -1,0 +1,9 @@
+.venv/
+tests/
+Dockerfile
+.pre-commit-config.yaml
+.isort.cfg
+.gitignore
+.env
+.env.example
+setup.cfg

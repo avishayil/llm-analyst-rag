@@ -1,0 +1,13 @@
+services:
+  motoserver:
+    image: motoserver/moto:5.0.10
+    ports:
+      - "3000:3000"
+    environment:
+      - MOTO_PORT=3000 # set moto listener port with env var
+      - MOTO_COGNITO_IDP_USER_POOL_ID_STRATEGY=HASH
+  redis:
+    image: redis/redis-stack:latest
+    ports:
+      - "6379:6379"
+      - "8001:8001"

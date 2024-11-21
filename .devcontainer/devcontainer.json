@@ -1,0 +1,36 @@
+{
+	"name": "Python Dev Environment",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/app",
+	"customizations": {
+	  "vscode": {
+		  "extensions": [
+			  "ms-python.python",
+			  "ms-azuretools.vscode-docker",
+			  "esbenp.prettier-vscode",
+			  "ms-python.vscode-pylance",
+			  "charliermarsh.ruff",
+			  "eamodio.gitlens"
+			],
+			"settings": {
+			  "python.pythonPath": "/root/.pyenv/shims/python",
+			  "python.defaultInterpreterPath": "/root/.pyenv/shims/python",
+			  "python.formatting.provider": "black",
+			  "python.linting.enabled": true,
+			  "python.linting.flake8Enabled": true,
+			  "python.linting.pylintEnabled": false,
+			  "editor.formatOnSave": true,
+			  "python.analysis.typeCheckingMode": "basic",
+			  "python.analysis.autoImportCompletions": true
+			},
+			"postCreateCommand": "poetry install --no-root",
+			"mounts": [
+			  "source=${localEnv:HOME}/.aws,target=/root/.aws,type=bind,consistency=cached"
+			],
+			"forwardPorts": [8000],
+			"runServices": ["motoserver"],
+			"shutdownAction": "stopCompose"
+	  }
+	}
+  }

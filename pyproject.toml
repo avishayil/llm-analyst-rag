@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "task-guard"
+version = "0.1.0"
+description = "Calculate Relevancy of a Software Task to ASVS Requiements LLM"
+authors = ["Avishay Bar <avishayil@users.noreply.github.com>"]
+readme = "README.md"
+packages = []
+
+[[tool.poetry.source]]
+name = "pypi-public"
+url = "https://pypi.org/simple/"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+langchain = "*"
+langchain-aws = "*"
+langchain-redis = "*"
+langchain-community = "*"
+boto3 = "1.35.57"
+boto3-stubs = {extras = ["boto3"], version = "1.35.57"}
+
+scipy = "*"
+pandas = "*"
+pydantic = "*"
+defusedxml = "*"
+gradio = "*"
+uvicorn = "*"
+authlib = "*"
+fastapi = "*"
+slowapi = "*"
+starlette = "*"
+itsdangerous = "*"
+python-jose = "*"
+python-dotenv = "*"
+redis = "*"
+
+[tool.poetry.dev-dependencies]
+black = "==24.1.1"
+isort = "==5.11.5"
+flake8 = "==7.0.0"
+yamllint = "*"
+pre-commit = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-asyncio = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+reportInvalidTypeForm = false
